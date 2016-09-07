@@ -1,0 +1,126 @@
+---
+layout: default
+---
+
+{% for item in site.data.events %}
+    {% if  item.ministry_name[0] == page.title  %}
+        {% assign Events = true %}
+    {% endif %}
+{% endfor %}
+{% for item in site.data.photos %}
+    {% if  item.ministry_name[0] == page.title  %}
+        {% assign Photos = true %}
+    {% endif %}
+{% endfor %}
+
+<div class="ministriesContent">
+    <div class="ministriesContent__menu" data-sticky-container>
+    <div class="sticky" data-sticky data-anchor="content">
+    <h5>Our Ministries</h5>
+        <ul class="menu vertical">
+            {% for item in site.data.ministries %}
+                    <li><a href="{{ item.name | datapage_url: 'ministries' | prepend: site.baseurl | prepend: site.url }}">{{item.name}}</a></li>
+                    {% endfor %}
+        </ul>
+        </div><!--/sticky-->
+    </div><!--/ministries-menu-->
+    <div class="ministriesContent__content" id="content">
+    
+
+        <div class="ministriesContent__content__pageHeader">
+        <h1 class="pageName">{{page.title}}</h1>
+        </div><!--/page-header-->
+    <article class="ministriesContent__content__content">
+    <div class="ministriesContent__content__basic-info">
+        <div class="details" {% if  page.leader_name%} style="border-right: 1px solid #fff;" {%endif%}>
+            {% if page.description %}
+            <h5>Description:</h5>
+            <p>{{page.description}}</p>
+            {% endif %}
+            {% if  page.group %}
+            <h5>Audience:</h5>
+            <p>{{page.group}}</p>
+            {% endif %}     
+        </div>
+        {% if  page.leader_name%}
+       
+        <div class="leadership">
+            <h5>Leader: {{page.leader_name}}</h5>
+            {% if page.leader_thumbnail %}
+                        {% for img in page.leader_thumbnail %}
+                    <img src="{{img.url}}" alt="" class="thumbnail" width="100px">
+                        {% endfor %}
+                    {% endif %}
+                     {% if page.leader_bio %}
+                    <p class="leaderDescription">{{page.leader_bio}}</p>
+                    {% endif %}
+            <h5>Contact:</h5>
+            {% if page.leader_phone %}
+                    <p><i class="fi-telephone"></i> <span>{{page.leader_phone}}</span></p>
+                    {% endif %}
+                    {% if page.leader_email %}
+                    <p><i class="fi-mail"></i><span> {{page.leader_email}}</span></p>
+                    {% endif %}
+        </div>
+         {% endif %}
+    </div><!--/basic-info-->
+        {% if page.body_content %}
+
+            {{page.body_content | markdownify}}
+            {% endif %}
+
+    <div class="ministriesContent__content__photos">
+        <h2>Photos from the {{page.title}}:</h2>
+        <div class="ministriesContent__content__photos__thumbnails">
+            {% for group in site.data.photos | limit: 1 %}
+            {% if group.ministry_name[0] == page.title %}
+             {% for img in group.gallery | limit: 4 %}          
+                <a class="gallery" href="{{img.url}}">
+                    <img src="{{img.thumbnails.large.url}}" />
+             </a><!--/gallery-item-->
+            {% endfor %} <!--/end individual images-->
+            {% else %}
+            <p>No recent {{page.title}} pictures to show.</p>
+            {% endif %}
+          {% endfor %} <!--/ end gallery loop -->           
+        </div>
+                    
+
+    </div><!--/basic-info-->
+    </article>
+    <aside class="ministriesContent__content__sidebar">
+         {% if page.logo  %}
+         {% for img in page.logo%}
+        <img src="{{img.url}}" alt="ministry logo">
+        {% endfor %}
+        {% endif %}
+        {% if  Events %}
+         <div class="ministry-events">       
+        <h3>Upcoming Events</h3>
+        {% for event in site.data.events %}
+            {% if  event.ministry_name[0] == page.title  %}
+            {% assign counter2 = 0 %}
+            {% assign maxPostCount2 = 3 %}
+            {% if counter2 < maxPostCount2 %}
+            
+         <article class="event">
+        <div class="event-date">
+          <p class="event-month">Sept</p>
+          <p class="event-day">18</p>
+        </div>
+        <div class="event-desc">
+          <h4 class="event-desc-header">{{ event.event_name }}</h4>
+          {% if  event.description %}
+          <p class="event-desc-detail"><span class="event-desc-time"></span>{{event.description}}</p>
+          {% assign counter2=counter2 | plus:1 %}
+          {% endif %}
+          {% endif %}
+        </div>
+      </article><!--/event-->
+      {% endif %}
+      {% endfor %}    
+        </div><!--/ministry-events-->
+        {% endif %}
+    </aside>
+    </div><!--/main-content-->
+</div><!--/ministries-content-->

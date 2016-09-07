@@ -1,0 +1,85 @@
+# What's the name of the church?
+title: Rivermont Baptist Church
+# Give a brief description of the church
+description: > # this means to ignore newlines until "baseurl:"
+    Commmunity Baptist Church is a gospel preaching, Bible believing church in Riverhead, (Long Island) New York.
+# Leave this alone
+baseurl: "" # the subpath of your site, e.g. /blog
+# Change this to the domain when you are finished and ready to publish.
+url: "http://localhost:3000/" # the base hostname & protocol  http://new-england.pubstorm.site/ for your site | Switch to "http://communitybaptistchurch.net/" Before running Glynn.  Afterwards change it back to http://localhost:4000/
+
+# This is the path to the default images.  If you add different default images you can change them here.
+default_header_image: "http://sitesforchurch.s3.amazonaws.com/cm_default_header.jpg"
+default_sermon_image: "http://sitesforchurch.s3.amazonaws.com/cm_default_header.jpg"
+default_blog_image: "http://sitesforchurch.s3.amazonaws.com/cm_default_header.jpg"
+default_about_image: "http://sitesforchurch.s3.amazonaws.com/cm_default_header.jpg"
+default_calendar_image: "http://sitesforchurch.s3.amazonaws.com/calendar_default.jpg"
+default_hero_image: "http://sitesforchurch.s3.amazonaws.com/hero.jpg"
+# The lattitude and longitude for Google Maps
+map_lat: "39.476286"
+map_long: "-88.4009097"
+
+# Airtable API Stuff
+airtable:
+  apikey: "keyRTLlrVS02vC3Vx"
+  blog: "appRUzcUZHfkVyn1g"
+  sermons: "appPlrQmAHYCLAzWo"
+  series: "appPlrQmAHYCLAzWo"
+  ministries: "appbTYs7RPbQD41QL"
+  photos: "appbTYs7RPbQD41QL"
+  events: "appbTYs7RPbQD41QL"
+  abouts: "app0XyS6tWRyseVlR"
+  welcome: "appeD0Mlp0DNxAOb5"
+  info: "appKnClyJwLX5eZKy"
+  contact: "appWB6NKMgmtgDURn"
+
+# LEAVE EVERYTHING ELSE ALONE!!
+
+# Build settings
+markdown: kramdown
+ 
+# Exclude
+exclude:
+  - package.json
+  - node_modules
+  - gulpfile.js 
+  - bower_components
+keep_files:
+  - assets/css
+
+
+page_gen:
+  - data: 'ministries'
+    template: 'ministries'
+    name: 'name'
+    dir: 'ministries'
+  - data: 'series'
+    template: 'series'
+    name: 'title'
+    dir: 'series'
+  - data: 'sermons'
+    template: 'sermon'
+    name: 'title'
+    dir: 'sermons'
+  - data: 'blog'
+    template: 'blog-entry'
+    name: 'title'
+    dir: 'blog-posts'
+  - data: 'abouts'
+    template: 'aboutpage'
+    name: 'title'
+    dir: 'about-us'
+  - data: 'events'
+    template: 'event'
+    name: 'event_name'
+    dir: 'events'
+  - data: 'abouts'
+    template: 'about'
+    name: 'title'
+    dir: 'about-us'
+
+ftp_host: 'biblebaptistmattoon.org'
+ftp_dir: 'communitybaptistchurch.net/'
+ftp_passive: false
+ftp_username: 'ryahay11'
+ftp_password: '@88Volvocj'

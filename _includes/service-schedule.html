@@ -1,0 +1,10 @@
+<!-- 
+Just change the things between the tags:  <li> HERE </li>
+You can copy and paste a new <li></li> or delete one if needed.
+-->
+<ul>
+    {% for item in site.data.service_schedule %}
+    
+    <li>{{item.Service_name}} {% if item.Service_time %}- {{item.Service_time}}{% endif %}</li>
+    {% endfor %}
+</ul>

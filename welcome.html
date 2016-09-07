@@ -1,0 +1,110 @@
+---
+layout: default
+---
+<style>
+    .welcome {
+    background: url({{site.default_header_image}}) no-repeat center top;
+    background-size: contain;
+    padding-top: 100px;
+    min-height: 1200px;
+    }
+</style>
+
+<!-- This welcome page is a little bit more complicated than the one on California.  It too has a banded design, but it uses a single page menu.  
+
+Here is how it works -there are three elements to it:
+
+First, the welcome_Menu.
+    This is the menu for this page that sticks to the top of the screen as you scroll down.  It's pretty cool.  Instead of a URL in the <a href=""> part, put the symbol # and then the ID of the div section.  So if it is <div id="section-1"></div>  You would link to that with <a href="#section-1"></a>.
+Second, the div sections:
+    Each band or section of the page sits in a <div> tag.  This tag has to have two extra elements: an "ID" and a "data-magellan-target".  So the section-1 section would sit in a div that looks like this: <div class="section-1" id="section-1" data-magellan-target="section-1">
+ 
+
+
+-->
+
+<div class="welcome">
+    <div class="welcome__Header">
+    <h1>New to Community Baptist</h1>
+    </div><!--/welcome__Header-->
+    <div class="welcome__Wrapper" id="content">
+        <div class="sticky-wrapper" data-sticky-container>
+        <div class="sticky" data-sticky data-anchor="content" data-options="marginTop:0;" style="width:100%;">
+        <ul class="welcome__Menu"  data-magellan data-options="activeClass:active; threshold:85; animationDuration:500; barOffset:50;">
+            <li><a href="#welcome">Welcome</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#children">Children</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#location">Location</a></li>
+        </ul><!--/welcome__Menu--> 
+        </div><!--/sticky-->
+        </div><!--/sticky-wrapper-->
+    <div class="welcome__Content">
+        <div id="welcome" class="welcome__Content__welcome" data-magellan-target="welcome">
+            <h2>Visiting Community Baptist</h2>
+            We are honored that you would think about visiting our church and we want you to know that you are our valued guest.  This page should give you a pretty good idea of what to expect about our services and answers most of the questions visitors usually have.
+
+If there is anything this page doesn’t answer - please don’t hesitate to call us at (631) 258-1563
+        </div>
+        <div id="services" class="welcome__Content__services" data-magellan-target="services">
+             <h2>Our Services</h2>
+            <h3>When are your services?</h3>
+            <p>You are always welcome to join us for any one of our services.  Here is some basic information about them:</p>
+            <h3>Sunday Service</h3>
+
+                <p>We have services every Sunday at 11:00 AM . We sing some hymns, pray together, and our pastor brings a message from the Bible. Our services rarely last longer than one hour and fifteen minutes.</p>
+
+                <h3>Bible Study</h3>
+
+                <p>We meet every Sunday at 10:00 AM for Bible Study before the morning service. We have classes for all ages and stages of life. Please check out our ministries page for more information about Bible study classes.</p>
+
+                <h3>Midweek Prayer Meeting</h3>
+
+                <p>Every Wednesday at 7:00 PM we meet together for a time of fellowship and prayer. Our Wednesday services are more casual. We hear from a missionary (via video or a prayer letter), Pastor brings a very brief message on prayer, we take prayer requests and then we split up into various groups to pray. Childcare is provided.</p>
+        </div>
+        <div id="children" class="welcome__Content__children" data-magellan-target="children">
+             <h2>What About the Kids?</h2>
+            <h3>Nursery</h3>
+
+<p>Nursery is provided for all of our services. We strive to create a wonderful environment for your littlest ones. Our Nursery is well staffed, and clean. Parents are always welcome.</p>
+
+<h3>Children’s Church</h3>
+
+<p>During our Sunday Morning service we provide a children’s church for kids from preschool through 6th grade. These kids sit in the “regular” service until right before the message, and then go to their respective children’s church group for an age appropriate message and activities.</p>
+
+<h3>Youth Group</h3>
+
+<p>We have a youth group for teenagers. They meet together during Sunday School and Wednesday nights and during monthly activities.</p>
+        </div>
+        <div id="faq" class="welcome__Content__faq" data-magellan-target="faq">
+            <h2>Frequently Asked Questions</h2>
+            <p>Below are answers to some of the most common questions people often ask before visiting a church?</p>
+
+<h4>Is there a dress code?</h4>
+
+<p>While most of the people in our church “dress up” - there is no dress code at the church. We don’t care what you wear, only that you are here. </p>
+
+<h4>What is your music like?</h4>
+
+<p>Our music is very traditional. It is mostly congregational hymns, choir music, and occasionally solos and duets.</p>
+
+<h4>Am I expected to take part in an offering?</h4>
+
+<p>No! Our offering is for our members and regular attenders. When the offering is passed please just let it go on by.</p>
+        </div>
+         <div id="location" class="welcome__Content__location" data-magellan-target="location">
+             <h2>Our Location</h2>
+             <h3>How do I get to CBC?</h3>
+            <h4>From the West: (Nassau county, Western Suffolk, and NYC)</h4>
+<p>Long Island Expressway (495) east to exit 71. At the stop sign turn left onto Edwards Avenue and head North, proceed about 2 miles and turn right onto Sound ave, proceed about 4 miles. Community Baptist Church is on the right hand side (on the corner of Sound ave, and Church lane).</p>
+<h4>From the East: (North Fork of Long Island)</h4>
+<p>Middle Road West toward NYC. Proceed until Middle Road merges with Sound avenue and continue straight. Proceed about 2 miles to Community Baptist Church on the left hand side. (corner of Sound avenue and Church lane)</p>
+<h4>From the south Fork: (Hamptons, Shinnecock, Montauk)</h4>
+<p>Sunrise Hwy (27) west toward NYC. Take exit 65 north (Hwy 24,Flanders Rd), proceed North West about 5 miles and turn right on Cross River Drive (105 North), continue on this path about 3 miles until you reach Sound ave. Turn right onto Sound avenue, and follow it about 1 ½ miles. Community Baptist Church is on the right hand side (the corner of Sound avenue and Church Lane).</p>
+<h4>From the South Shore: (West Hampton, Moriches, Patchogue, Bayport, and points West)</h4>
+<p>Sunrise Hwy (27) East toward Montauk. Take exit 63 N (Riverhead Rd) and proceed about ¾ mile till it stops at Quogue-Riverhead Rd. Turn left onto Quoge-Riverhead Rd and proceed North about 2 miles to Cross River Drive (105), continue on this path about 3 miles until you reach Sound ave. Turn right onto Sound avenue, and follow it about 1 ½ miles. Community Baptist Church is on the right hand side (the corner of Sound avenue and Church Lane).</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48200.68596772981!2d-72.65404492246601!3d40.969592029752874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e88bf438843fa7%3A0xae0fd43d7f0670b1!2s5267+Sound+Ave%2C+Riverhead%2C+NY+11901!5e0!3m2!1sen!2sus!4v1453866313647" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div><!--/welcome__Content-->
+    </div><!--/welcome__Wrapper-->
+</div><!--/welcome-->

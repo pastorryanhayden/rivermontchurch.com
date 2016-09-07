@@ -1,0 +1,14 @@
+<!-- 
+Just change the things between the tags:  <span> HERE </span>
+-->
+<ul>
+    <li><i class="fa fa-phone"></i> <span>{{site.data.contact[0].Phone }} </span></li>
+    <li><i class="fa fa-map-marker"></i> <span>{{site.data.location[0].Street_Address}} {{site.data.location[0].Street_Address2}}</span></li>
+    <li><span>{{site.data.location[0].City }}, {{site.data.location[0].State }}</span></li>
+    <hr>
+    <li> 
+         {% if site.data.contact[0].Facebook %}<a href="{{site.data.contact[0].Facebook}}"><i class="fa fa-facebook"></i></a> {% endif %}
+          {% if site.data.contact[0].Twitter %}<a href="{{ site.data.contact[0].Twitter }}"><i class="fa fa-twitter"></i></a> {% endif %}
+          {% if site.data.contact[0].Youtube %}<a href="{{ site.data.contact[0].Youtube }}"><i class="fa fa-youtube"></i></a> {% endif %}
+         <a href="http://airtable.com"><i class="fa fa-gear"></i></a></li>
+</ul>

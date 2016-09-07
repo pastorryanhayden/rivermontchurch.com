@@ -1,0 +1,32 @@
+ <div class="ministry-events" v-if="thisData">       
+        <h3>Upcoming Events</h3>
+         <article class="event" v-for="event in events">
+        <div class="event-date">
+          <p class="event-month">Sept</p>
+          <p class="event-day">18</p>
+        </div>
+        <div class="event-desc">
+          <h4 class="event-desc-header">{% raw %}{{event.event_name}}{% endraw %}</h4>
+          <p class="event-desc-detail"><span class="event-desc-time"></span>BDConf - Altlanta</p>
+          <a href="http://bdconf.com/speakers/brandon-arnold/" class="rsvp button">RSVP &amp; Details</a>
+        </div>
+      </article><!--/event-->    
+        </div><!--/ministry-events-->
+            <script>
+                $(document).on('ready', function(){ 
+                //define data
+                var items = $.getJSON('https://api.airtable.com/v0/appbTYs7RPbQD41QL/Church%20Events?api_key=keyj65VmcfHjMjuXA');
+                var records = items.responseJSON.records;
+                var events = records[0].fields;
+                //define current pagename
+                var pageName = $('.pageName').text();
+
+                //further define data to only the events whose event_name is equal to the pageName
+                var thisData = $(events).filter(function (i,n){return n.ministry_name == pageName;})
+                });
+                new Vue({
+                    el: '.ministry-events',
+                    data: {
+                        events: thisData,
+                    });
+            </script>
