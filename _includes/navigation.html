@@ -14,9 +14,12 @@
             <li><a href="{{site.url}}welcome.html">Welcome</a></li>
             <li class="dropdown"><a href="#">About Us</a>
                 <ul>
-                    {% for item in site.data.abouts %}
-                    <li><a href="{{ item.title | datapage_url: 'about-us' | prepend: site.baseurl | prepend: site.url }}">{{item.title}}</a></li>
-                    {% endfor %}
+                   <li><a href="{{site.url}}our-leadership.html">Our Leadership</a></li>
+    <li><a href="{{site.url}}our-beliefs.html">Our Beliefs</a></li>
+    {% for item in site.data.abouts %}
+            <li><a href="{{ item.title | datapage_url: 'about-us' | prepend: site.baseurl | prepend: site.url }}">{{item.title}}</a></li>
+    {% endfor %}
+    <li><a href="{{site.url}}the-gospel.html">The Gospel</a></li>
 
                 </ul>
             </li>
@@ -59,9 +62,12 @@
             <li><a href="{{site.url}}welcome.html">Welcome</a></li>
             <li class="dropdown"><a href="#">About Us</a>
                 <ul>
-                    {% for item in site.data.abouts %}
-                    <li><a href="{{ item.title | datapage_url: 'about-us' | prepend: site.baseurl | prepend: site.url }}">{{item.title}}</a></li>
-                    {% endfor %}
+                    <li><a href="{{site.url}}our-leadership.html">Our Leadership</a></li>
+    <li><a href="{{site.url}}our-beliefs.html">Our Beliefs</a></li>
+    {% for item in site.data.abouts %}
+            <li><a href="{{ item.title | datapage_url: 'about-us' | prepend: site.baseurl | prepend: site.url }}">{{item.title}}</a></li>
+    {% endfor %}
+    <li><a href="{{site.url}}the-gospel.html">The Gospel</a></li>
 
                 </ul>
             </li>

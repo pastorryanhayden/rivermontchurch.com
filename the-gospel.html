@@ -1,30 +1,30 @@
 ---
 layout: default
 ---
-
 <div class="aboutContent">
     <div class="aboutContent__menu" data-sticky-container>
     <div class="sticky" data-sticky data-anchor="content">
-    {% include about-menu.html %}
+        {% include about-menu.html %}
         </div><!--/sticky-->
     </div><!--/about-menu-->
     <div class="aboutContent__content" id="content">
 
         <div class="aboutContent__content__pageHeader">
-        {% if page.featured_image %}
-        {% for img in page.featured_image %}
-        <img src="{{img.url}}" alt="">
-        {% endfor %}
+        {% if  site.data.gospel[0].Featured_Image %}
+            {% for img in site.data.gospel[0].Featured_Image %}
+            <img src="{{img.url}}" alt="">
+            {% endfor %}
         {% else %}
         <img src="{{site.default_about_image}}" alt="">
         {% endif %}
-        <h1>About Us: <span>{{page.title}}</span></h1>
+        
+        <h1>{{site.data.gospel[0].Heading}}</h1>
         </div><!--/page-header-->
-    <article class="aboutContent__content__content">
-        {% if page.body_content %}
-        {{page.body_content | markdownify }}
-        {% endif %}
+    <article class="aboutContent__content__content full">
+
+
+        {{site.data.gospel[0].Content | markdownify }}
+         
     </article>
-    {% include about-sidebar.html %}
     </div><!--/main-content-->
 </div><!--/about-content-->

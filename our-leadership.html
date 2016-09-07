@@ -1,0 +1,51 @@
+---
+layout: default
+---
+<div class="aboutContent">
+    <div class="aboutContent__menu" data-sticky-container>
+    <div class="sticky" data-sticky data-anchor="content">
+        {% include about-menu.html %}
+        </div><!--/sticky-->
+    </div><!--/about-menu-->
+    <div class="aboutContent__content" id="content">
+
+        <div class="aboutContent__content__pageHeader">
+        <img src="{{site.default_about_image}}" alt="">
+        <h1>About Us: <span>Leadership &amp; Staff</span></h1>
+        </div><!--/page-header-->
+    <article class="aboutContent__content__content">
+       {% for leader in site.data.leadership %}
+       {% if  leader.Is_Senior_Pastor %}
+       <div class="leader senior">
+           <h3>{{leader.Leader_Name}}</h3>
+           <h5 class="role">{{leader.Position}}</h5>
+           {% if leader.Photo %}
+           {% for img in leader.Photo %}
+            <img class="thumbnail" src="{{img.url}}" alt="">
+           {% endfor %}
+           {% endif %}
+           {% if  leader.Content %}
+           {{ leader.Content | markdownify }}
+           {% endif %}
+           <div style="clear: right"></div>
+       </div><!--/senior-pastor-div-->
+       {% else %}
+       <div class="leader">
+           <h3>{{leader.Leader_Name}}</h3>
+           <h5 class="role">{{leader.Position}}</h5>
+           {% if leader.Photo %}
+           {% for img in leader.Photo %}
+            <img class="thumbnail" src="{{img.url}}" alt="">
+           {% endfor %}
+           {% endif %}
+           {% if  leader.Content %}
+           {{ leader.Content | markdownify }}
+           {% endif %}
+           <div style="clear: right"></div>
+       </div><!--/regular leader-div-->
+       {% endif %}
+       {% endfor %}
+    </article>
+    {% include about-sidebar.html %}
+    </div><!--/main-content-->
+</div><!--/about-content-->

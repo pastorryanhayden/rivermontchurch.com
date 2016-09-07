@@ -59,6 +59,14 @@ h1 span {
     @include breakpoint(large){
     @include grid-column(8);
     }
+    &.full {
+    @include breakpoint(medium){
+    @include grid-column(12);
+    }
+    @include breakpoint(large){
+    @include grid-column(12);
+    }
+    }
 }
 
 .aboutContent__content__sidebar {

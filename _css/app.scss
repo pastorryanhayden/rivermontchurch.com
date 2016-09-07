@@ -12,8 +12,8 @@
 @include foundation-button; 
 @include foundation-forms;
 // @include foundation-range-input;
-@include foundation-accordion;
-@include foundation-accordion-menu; 
+@include foundation-accordion; 
+@include foundation-accordion-menu;  
 // @include foundation-badge;
 // @include foundation-breadcrumbs;
 // @include foundation-button-group;
@@ -61,4 +61,6 @@
 @import 'pages/pages-dir'; 
 @import 'pages/blogPost'; 
 @import 'pages/gallery'; 
+@import 'pages/leadership'; 
+@import 'pages/beliefs';     
 
