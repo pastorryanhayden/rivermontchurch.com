@@ -27,6 +27,8 @@ h2 {
 	text-shadow: 0px 2px 4px rgba(0,0,0,0.50);
 	font-weight: 400;
 	font-style: normal;
+	background: transparentize($primary-color, .2);
+	padding: 10px;
 
 }
 
@@ -43,7 +45,7 @@ a {
 	border: 3px solid white;
 	font-size: 16px;
 	line-height: 20px;
-	background-color: $black;
+	background-color: $primary-color;
 }
 
 }

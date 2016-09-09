@@ -3,7 +3,7 @@ layout: default
 ---
 <style>
     div.hero {
-    background: url('http://sitesforchurch.s3.amazonaws.com/Untitled%20design%20(3).jpg') no-repeat top center;
+    background: url('http://sitesforchurch.s3.amazonaws.com/rivermontheader.jpg') no-repeat center center;
     min-height: 30vh; 
     background-size: cover;
     padding-top: 50px;
@@ -12,10 +12,10 @@ layout: default
 
  <div class="hero">
             <div class="hero-content">
-                <h2>Exalting Christ and seeing Him change lives in Riverhead since 2010.</h2>
+                <h2>{{site.data.home[0].Intro_Heading<}}</h2>
                 <div class="buttons">
                 <a href="{{site.url}}welcome.html" class="button">Plan A Visit</a>
-                <a href="{{site.url}}contact-us.html" class="button">Get In Touch</a>
+                <a href="{{site.url}}contact-us.php" class="button">Get In Touch</a>
                 </div><!--/buttons-->
             </div><!--/hero-content-->
         </div><!--/hero-->

@@ -5,12 +5,7 @@ layout: default
 <div class="aboutContent">
     <div class="aboutContent__menu" data-sticky-container>
     <div class="sticky" data-sticky data-anchor="content">
-    <h5>More About Us</h5>
-        <ul class="menu vertical">
-            {% for item in site.data.abouts %}
-                    <li><a href="{{ item.title | datapage_url: 'about-us' | prepend: site.baseurl | prepend: site.url }}">{{item.title}}</a></li>
-            {% endfor %}
-        </ul>
+    {% include about-menu.html %}
         </div><!--/sticky-->
     </div><!--/about-menu-->
     <div class="aboutContent__content" id="content">
@@ -30,13 +25,6 @@ layout: default
         {{page.body_content | markdownify }}
         {% endif %}
     </article>
-    <aside class="aboutContent__content__sidebar">
-        <a href="{{site.url}}welcome.html" class="button"><i class="fi-map"></i> Plan A Visit</a>
-        <a href="{{site.url}}contact.html" class="button"><i class="fi-comment"></i> Get In Touch</a>
-        <div class="gospel">
-            <a href="#"><img src="http://sitesforchurch.s3.amazonaws.com/gospel.jpg" alt=""> </a>
-        </div><!--gospel-->
-
-    </aside>
+    {% include about-sidebar.html %}
     </div><!--/main-content-->
 </div><!--/about-content-->

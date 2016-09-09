@@ -184,7 +184,7 @@ abouts('Other Pages').select({
     events('Church Events').select({
         maxRecords: 100,
       //sort
-        filterByFormula: "AND(published, Future)",
+        filterByFormula: "Future",
         sort: [{field: "DateTime", direction: "desc"}],
       //Formula to how to get data
       // help https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference
@@ -476,7 +476,8 @@ abouts('Other Pages').select({
 
     service_schedule('Service_Schedule').select({
         maxRecords: 10,
-        sort: [{field: "order", direction: "asc"}]
+        view: "Main View"
+        
       //Formula to how to get data
       // help https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference
 
@@ -505,7 +506,7 @@ abouts('Other Pages').select({
 
     welcome('Sections').select({
         maxRecords: 10,
-        sort: [{field: "order", direction: "asc"}]
+        view: "Main View"
       //Formula to how to get data
       // help https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference
 
@@ -721,4 +722,35 @@ leadership('Leadership').select({
     console.error(err)
   });
   console.log('leadership worked');
+});
+
+// Missionaries data 
+
+var config = loadConfig().airtable;
+var jsonfile = require('jsonfile');
+var filemissionaries = '_data/missionaries.json';
+var missionaries = new Airtable({ apiKey: config.apikey }).base(config.missionaries);
+var missionariesJson = [];
+var missionariesJsonTest = [];
+
+missionaries('Missionaries').select({
+    maxRecords: 100,
+    view: "Main View"
+  
+}).eachPage(function page(records, fetchNextPage) {
+
+    records.forEach(function(record) {
+      missionariesJson.push(record._rawJson.fields);
+      
+    });
+    fetchNextPage();
+
+}, function done(error) {
+    if (error) {
+        console.log(error);
+    }
+  jsonfile.writeFile(filemissionaries, missionariesJson, function (err) {
+    console.error(err)
+  });
+  console.log('missionaries worked');
 });

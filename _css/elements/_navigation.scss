@@ -30,6 +30,7 @@ nav.main-navigation ul.navigation {
 	text-transform: uppercase;
 	font-family: $header-font-family;
 	color: $medium-gray;
+	position: relative;
 	}
 
 	}
@@ -52,7 +53,7 @@ nav.main-navigation ul li:hover ul {
 	display: block;
 	background: $dark-gray;
 	z-index:50;
-	position: relative;
+	position: absolute;
 
 
 }
