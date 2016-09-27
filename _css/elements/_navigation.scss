@@ -43,17 +43,29 @@ nav.main-navigation ul li.dropdown > a:after {
 }
 
 nav.main-navigation ul ul {
-	display: none;
+	// display: none;
+	width: 0;
+	visibility:hidden;
 	list-style-type: none;
 	margin-left: 0;
+	opacity:0;
+    filter:alpha(opacity=0);
+    -webkit-transition:200ms ease;
+    -moz-transition:200ms ease;
+    -o-transition:200ms ease;
+    transition:200ms ease;
 
 }
 
 nav.main-navigation ul li:hover ul {
-	display: block;
+	// display: block;
+	visibility:visible;
 	background: $dark-gray;
 	z-index:50;
+	width: inherit;
 	position: absolute;
+	opacity:1;
+    filter:alpha(opacity=100);
 
 
 }

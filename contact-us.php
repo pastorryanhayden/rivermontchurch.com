@@ -1,8 +1,8 @@
 ---
-layout: default
+layout: contact
 ---
 
-<?php session_start();
+<?php 
 include "./libs/class.smtp.php";
 include "./libs/class.phpmailer.php";
 include "./simple-php-captcha.php";
