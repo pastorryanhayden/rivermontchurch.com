@@ -1,14 +1,25 @@
 ---
 layout: default
 ---
+{% if  site.data.home[0].Main_Image %}
 <style>
     div.hero {
-    background: url('http://sitesforchurch.s3.amazonaws.com/rivermontheader.jpg') no-repeat center center;
+    background: url({{site.data.home[0].Main_Image[0].url}}) no-repeat center center;
     min-height: 30vh; 
     background-size: cover;
     padding-top: 50px;
 }
 </style>
+{% else %}
+<style>
+    div.hero {
+    background: url({{site.default_hero_image}}) no-repeat top center;
+    min-height: 30vh; 
+    background-size: cover;
+    padding-top: 50px;
+}
+</style>
+{% endif %}
 
  <div class="hero">
             <div class="hero-content">
@@ -30,7 +41,7 @@ layout: default
                     <div class="sermon-info">
                         <div class="play-button">
                             {% if  sermon.sermon_mp3 %}
-                                {% for mp3 in sermon.sermon_mp3 %}
+                                {% for mp3 in sermon.sermon_mp3 limit: 1%}
                             <a href="{{mp3.url}}" class="play"><i class="fa fa-play-circle"></i></a>
                              {% endfor %}
                             {% else %}
