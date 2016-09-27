@@ -183,3 +183,10 @@ margin-bottom: 30px;
     @include grid-column-offset(1);
     }
 }
+
+ul.action__buttons {
+    list-style-type: none;
+    margin-left: 0;
+    display: flex;
+    justify-content: space-between;
+}
