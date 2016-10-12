@@ -67,6 +67,12 @@ h1 span {
     @include grid-column(12);
     }
     }
+    img {
+        max-height: 300px; 
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
 }
 
 .aboutContent__content__sidebar {
