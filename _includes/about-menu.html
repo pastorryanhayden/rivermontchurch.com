@@ -5,5 +5,6 @@
     {% for item in site.data.abouts %}
             <li><a href="{{ item.title | datapage_url: 'about-us' | prepend: site.baseurl | prepend: site.url }}">{{item.title}}</a></li>
     {% endfor %}
+    <li><a href="{{site.url}}missionaries.html">Our Missionaries</a></li>
     <li><a href="{{site.url}}the-gospel.html">The Gospel</a></li>
 </ul>

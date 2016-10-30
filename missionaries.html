@@ -1,0 +1,93 @@
+---
+layout: default
+---
+
+<div class="aboutContent">
+    <div class="aboutContent__menu" data-sticky-container>
+    <div class="sticky" data-sticky data-anchor="content">
+        {% include about-menu.html %}
+        </div><!--/sticky-->
+    </div><!--/about-menu-->
+    <div class="aboutContent__content" id="content">
+
+        <div class="aboutContent__content__pageHeader">
+        <img src="http://sitesforchurch.s3.amazonaws.com/Screen%20Shot%202016-10-29%20at%2010.18.28%20PM.png" alt="">
+        <h1>About Us: <span>Our Missionaries</span></h1>
+        </div><!--/page-header-->
+    <article class="aboutContent__content__content">
+      
+       <div class="belief">
+        <h3><i class="fa fa-globe"></i> In Asia</h3>
+            <ul>
+                {% for missionary in site.data.missionaries %}
+                {% if missionary.Continent == "Asia" %}
+                
+                <li><strong>{{missionary.First_Names}} {{missionary.Last_Name}}</strong>, {{missionary.Field_of_Service}}</li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div><!--/belief-->
+         <div class="belief">
+        <h3><i class="fa fa-globe"></i> In Africa</h3>
+            <ul>
+                {% for missionary in site.data.missionaries %}
+                {% if missionary.Continent == "Africa" %}
+                
+                <li><strong>{{missionary.First_Names}} {{missionary.Last_Name}}</strong>, {{missionary.Field_of_Service}}</li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div><!--/belief-->
+        <div class="belief">
+        <h3><i class="fa fa-globe"></i> In Europe</h3>
+            <ul>
+                {% for missionary in site.data.missionaries %}
+                {% if missionary.Continent == "Europe" %}
+                
+                <li><strong>{{missionary.First_Names}} {{missionary.Last_Name}}</strong>, {{missionary.Field_of_Service}}</li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div><!--/belief-->
+        <div class="belief">
+        <h3><i class="fa fa-globe"></i> In the Islands of the Sea</h3>
+            <ul>
+                {% for missionary in site.data.missionaries %}
+                {% if missionary.Continent == "Islands of the Sea" %}
+                
+                <li><strong>{{missionary.First_Names}} {{missionary.Last_Name}}</strong>, {{missionary.Field_of_Service}}</li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div><!--/belief-->
+        <div class="belief">
+        <h3><i class="fa fa-globe"></i> In North &amp; Central America</h3>
+            <ul>
+                {% for missionary in site.data.missionaries %}
+                {% if missionary.Continent == "North America" %}
+                
+                <li><strong>{{missionary.First_Names}} {{missionary.Last_Name}}</strong>, {{missionary.Field_of_Service}}</li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div><!--/belief-->
+         <div class="belief">
+        <h3><i class="fa fa-globe"></i> In South America</h3>
+            <ul>
+                {% for missionary in site.data.missionaries %}
+                {% if missionary.Continent == "South America" %}
+                
+                <li><strong>{{missionary.First_Names}} {{missionary.Last_Name}}</strong>, {{missionary.Field_of_Service}}</li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div><!--/belief-->
+
+         
+    </article>
+    {% include about-sidebar.html %}
+    </div><!--/main-content-->
+</div><!--/about-content-->
+
+
+
