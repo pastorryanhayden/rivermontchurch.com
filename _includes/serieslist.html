@@ -9,7 +9,7 @@
             <img src="{{img.url}}" alt="{{item.title}}">
                 {% endfor %}
                 {% else %}
-                <img src="{{site.url}}{{site.default_sermon_image}}" alt="Default Series Image">
+                <img src="{{site.url}}/{{site.default_sermon_image}}" alt="Default Series Image">
                 {% endif %}
             </a>
             <h4><a href="{{ item.title | datapage_url: 'series' | prepend: site.baseurl | prepend: site.url }}">{{item.title}}</a></h4>
