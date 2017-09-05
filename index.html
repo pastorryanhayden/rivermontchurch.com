@@ -96,7 +96,7 @@ layout: default
             <a href="#" class="button">See More</a>
         </div><!--/gallery-->
 
-
+{% if site.data.blog[0].title %}
         <div class="home-blog">
         <h2>Blog Posts</h2>
             <div class="home_post_list">
@@ -124,6 +124,7 @@ layout: default
 
             </div><!--/home_post_list-->
         </div><!--/home-blog-->
+{% endif %}
     </article><!--/main-->
     </div><!--/main-content-wrapper-->
     </div><!--/content-->

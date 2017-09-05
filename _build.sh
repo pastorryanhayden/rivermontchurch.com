@@ -1,7 +1,7 @@
 #!/bin/bash
 
-path="/Users/ryanhayden/github/communitybaptistchurch.net/";
-git_path="https://github.com/pastorryanhayden/communitybaptistchurch.net.git";
+path="/Users/ryanhayden/projects/rhd/rivermontchurch.com/";
+git_path="https://github.com/pastorryanhayden/rivermontchurch.com";
 need_build=false;
 #!/usr/bin/env bash
 
